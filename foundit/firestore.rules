@@ -1,0 +1,8 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{db}/documents {
+    // Public posts: signed-in users can read. Nobody can write from the browser.
+    match /items/{id} { allow read: if request.auth != null; allow write: if false; }
+    // Everything else (private secrets, claims, rate limits) is closed by default.
+  }
+}
