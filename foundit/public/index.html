@@ -24,7 +24,7 @@ import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-ap
 import{getAuth,createUserWithEmailAndPassword as reg,signInWithEmailAndPassword as login,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import{getFirestore,collection,query,orderBy,limit,onSnapshot}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import{getFunctions,httpsCallable}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-functions.js";
-const app=initializeApp({apiKey:"AIzaSyCaQVBo1ySGYme84ujN8v6dMZdGwRGefa8",authDomain:"lost-and-found-a53a3.firebaseapp.com",projectId:"lost-and-found-a53a3"});
+const app=initializeApp({apiKey:"AIzaSyCHUwtR4V9MpWQqakxQz8UIgHbHfXDEaQM",authDomain:"foundit-854f1.firebaseapp.com",projectId:"foundit-854f1",storageBucket:"foundit-854f1.firebasestorage.app",messagingSenderId:"144508416088",appId:"1:144508416088:web:a041c3031eca16609d9a2d"});
 const auth=getAuth(app),db=getFirestore(app),fns=getFunctions(app,"us-central1");
 const call=async(n,d)=>(await httpsCallable(fns,n)(d)).data,$=i=>document.getElementById(i);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
