@@ -6,7 +6,7 @@ const str = (x, n = 300) => String(x || "").trim().slice(0, n);
 const tok = (t) => new Set(String(t).toLowerCase().split(/[^\p{L}\p{N}]+/u).filter((w) => w.length > 2));
 
 async function gemini(parts) {
-  const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent", {
+  const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-goog-api-key": process.env.GEMINI_API_KEY },
     body: JSON.stringify({ contents: [{ parts }], generationConfig: { responseMimeType: "application/json" } }),
